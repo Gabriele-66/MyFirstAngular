@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Articolo } from '../model/articolo';
 
 
@@ -10,16 +10,17 @@ import { Articolo } from '../model/articolo';
 
 export class ArticoloComponent implements OnInit {
 
-  @Input()articolo!: Articolo;
-  constructor() {
-  }
+  @Input() articolo!: Articolo;
+  @Output() like = new EventEmitter();
 
-  inc(event: { preventDefault: () => void; }) {
+  constructor() {}
+
+  inc1(event: { preventDefault: () => void; }) {
     this.articolo.numApprezzamenti++;
-    console.log(event)
+    console.log(event);
+    this.like.emit({ numApprezzamenti: this.articolo.numApprezzamenti });
   }
 
   ngOnInit(): void {
   }
-
 }

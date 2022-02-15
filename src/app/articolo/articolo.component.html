@@ -3,5 +3,6 @@
 <i>{{articolo.autore}}</i><br/>
 <p>{{articolo.testo}}</p>
 <p>Voti:{{articolo.numApprezzamenti}}
-  <button (click)="inc($event)">Mi piace</button>
+  <button (click)="inc1($event)">Mi piace</button>
+  <button (click)='articolo.numApprezzamenti = articolo.numApprezzamenti+1'>Mi piace no event</button>
 </p>

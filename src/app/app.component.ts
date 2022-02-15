@@ -18,4 +18,7 @@ export class AppComponent {
       numApprezzamenti: 0
     }
   }
+  grazie($event: { numApprezzamenti: string; }) {
+    alert("grazie " + $event.numApprezzamenti);
+  }
 }
