@@ -8,7 +8,7 @@ import { ArticoloComponent } from './articolo/articolo.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ArticoloComponent
+    ArticoloComponent,
   ],
   imports: [
     BrowserModule,
