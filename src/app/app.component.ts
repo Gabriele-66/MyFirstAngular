@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GitPrAnguarMyFirst';
+  myArticolo;
+  constructor() {
+    this.myArticolo = {
+      titolo: "Creare componenti Angular 2",
+			autore: "Mario Rossi",
+			testo: "Creare componenti con Angular 2 è molto semplice."
+    }
+  }
 }
