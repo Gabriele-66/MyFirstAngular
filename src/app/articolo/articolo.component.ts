@@ -13,7 +13,12 @@ export class ArticoloComponent implements OnInit {
   @Input()articolo!: Articolo;
   constructor() {
   }
-  
+
+  inc(event: { preventDefault: () => void; }) {
+    this.articolo.numApprezzamenti++;
+    console.log(event)
+  }
+
   ngOnInit(): void {
   }
 

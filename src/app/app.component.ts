@@ -14,7 +14,8 @@ export class AppComponent {
     this.rootArticolo = {
       titolo: "Creare componenti Angular 2",
 			autore: "Mario Rossi",
-			testo: "Creare componenti con Angular 2 è molto semplice."
+      testo: "Creare componenti con Angular 2 è molto semplice.",
+      numApprezzamenti: 0
     }
   }
 }
