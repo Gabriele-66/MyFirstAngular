@@ -10,20 +10,20 @@ import { Articolo } from '../model/articolo';
 
 export class ArticoloComponent implements OnInit {
 
-  @Input() articolo!: Articolo;
+  @Input() art!: Articolo;
   @Output() like = new EventEmitter();
 
   pippo: any = 0;
-  ruolo: any = 'admin';
+  ruolo: any = 'adcwscscsdcscsmin';
 
   listarticoli: any[] = [1,2,3,4,5,'pippo','pluto','a',["aa","bb"] ]
 
   constructor() {}
 
   inc1(event: { preventDefault: () => void; }) {
-    this.articolo.numApprezzamenti++;
+    this.art.numApprezzamenti++;
     console.log(event);
-    this.like.emit({ numApprezzamenti: this.articolo.numApprezzamenti });
+    this.like.emit({ numApprezzamenti: this.art.numApprezzamenti });
   }
 
   ngOnInit(): void {

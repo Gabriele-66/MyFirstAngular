@@ -1,10 +1,10 @@
-<p>articolo works!</p>
-<h3>{{articolo.titolo}}</h3>
-<i>{{articolo.autore}}</i><br/>
-<p>{{articolo.testo}}</p>
-<p>Voti:{{articolo.numApprezzamenti}}
+<p>art works!</p>
+<h3>{{art.titolo}}</h3>
+<i>{{art.autore}}</i><br/>
+<p>{{art.testo}}</p>
+<p>Voti:{{art.numApprezzamenti}}
   <button (click)="inc1($event)">Mi piace</button>
-  <button (click)='articolo.numApprezzamenti = articolo.numApprezzamenti+1'>Mi piace no event</button>
+  <button (click)='art.numApprezzamenti = art.numApprezzamenti+1'>Mi piace no event</button>
 </p>
 
 <input type="number" ref-numero (keyup)="0" />  <!-- ref-numero oppure #numero -->
