@@ -1,0 +1,15 @@
+<form>
+  <div>
+    <label for="txtTitolo">Titolo</label>
+    <input type="text" id="txtTitolo" required [(ngModel)]="model.titolo">
+  </div>
+  <div>
+    <label for="txtAutore">Autore</label>
+    <input type="text" id="txtAutore" required ngModel>
+  </div>
+  <div>
+    <label for="txtTesto">Testo</label>
+    <textarea id="txtTesto" required></textarea>
+  </div>
+  <button type="button">Invia</button>
+</form>
