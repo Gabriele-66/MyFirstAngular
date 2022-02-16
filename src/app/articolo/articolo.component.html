@@ -12,7 +12,40 @@
   il doppio di {{numero.value}} sarebbe {{numero.value}}
 </div>
 
-<input type="number" [(ngModel)]="pippo" />
-<div>
-  {{pippo}}
+<input type="number" [(ngModel)]="pippo" /> <!--forma compatta di-->
+{{pippo}}
+<!-- <input type="number" (ngModel)="binding" (ngModelChange)="binding=$event" /> -->
+
+<p [ngClass]="{'font-size':'small'}">Questo è il mio paragrafo</p>
+<a class="button" ngClass="active">aaaaa</a> <!--<a class="button" [ngClass]="{ active: datiModificati && !solaLettura,disabled: !datiModificati || solaLettura }">Salva</a>-->
+
+<div *ngIf="pippo"><button>Save</button></div>
+
+<!-- <template [ngIf]="pippo">
+  <div>
+    <button>Save</button>
+  </div>
+</template> -->
+
+<div [ngSwitch]="ruolo">
+	<div *ngSwitchCase="'admin'">
+		<button>Gestione utenti</button>
+		<button>Gestione documenti</button>
+	</div>
+	<div *ngSwitchCase="'manager'">
+		<button>Gestione documenti</button>
+		<button>Visualizza pratiche</button>
+	</div>
+	<div *ngSwitchCase="'utente'">
+		<button>Visualizza pratiche</button>
+	</div>
+	<div *ngSwitchDefault>
+		<button>Contatta l'assistenza</button>
+	</div>
 </div>
+
+<ul>
+  <li *ngFor="let art of listarticoli">
+    <b>{{art}}</b>
+  </li>
+</ul>

@@ -14,6 +14,9 @@ export class ArticoloComponent implements OnInit {
   @Output() like = new EventEmitter();
 
   pippo: any = 0;
+  ruolo: any = 'admin';
+
+  listarticoli: any[] = [1,2,3,4,5,'pippo','pluto','a',["aa","bb"] ]
 
   constructor() {}
 
