@@ -6,3 +6,13 @@
   <button (click)="inc1($event)">Mi piace</button>
   <button (click)='articolo.numApprezzamenti = articolo.numApprezzamenti+1'>Mi piace no event</button>
 </p>
+
+<input type="number" ref-numero (keyup)="0" />  <!-- ref-numero oppure #numero -->
+<div>
+  il doppio di {{numero.value}} sarebbe {{numero.value}}
+</div>
+
+<input type="number" [(ngModel)]="pippo" />
+<div>
+  {{pippo}}
+</div>

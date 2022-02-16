@@ -13,6 +13,8 @@ export class ArticoloComponent implements OnInit {
   @Input() articolo!: Articolo;
   @Output() like = new EventEmitter();
 
+  pippo: any = 0;
+
   constructor() {}
 
   inc1(event: { preventDefault: () => void; }) {
@@ -22,5 +24,6 @@ export class ArticoloComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("Il componente è in fase di inizializzazione!");
   }
 }
