@@ -12,7 +12,7 @@ export class AppComponent {
   constructor() {
     this.rootArticolo = {
       titolo: "Creare componenti Angular 2",
-			autore: "Mario Rossii",
+			autore: "Mario Rossi",
       testo: "Creare componenti con Angular 2 è molto semplice.",
       numApprezzamenti: 0
     }
