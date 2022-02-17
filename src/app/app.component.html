@@ -10,9 +10,11 @@
 
 <h2 style="text-align: center;">{{'lista di articoli aggiunti dai vari form' | uppercase}}</h2>
 <div>
-  <ul>
+  <ol>
     <li *ngFor="let aa of elencoArticoli">
-      <b>Titolo: {{aa.titolo}}</b>
+      <b>Titolo: {{aa.titolo}},</b>
+      <p>Autore: {{aa.autore}},</p>
+      <p>Testo: {{aa.testo}}</p>
     </li>
-  </ul>
+  </ol>
 </div>
