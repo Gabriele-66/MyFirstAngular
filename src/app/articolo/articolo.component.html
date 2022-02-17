@@ -1,19 +1,15 @@
-<p>art works!</p>
-<h3>{{art.titolo}}</h3>
-<i>{{art.autore}}</i><br/>
-<p>{{art.testo}}</p>
 <p>Voti:{{art.numApprezzamenti}}
   <button (click)="inc1($event)">Mi piace</button>
   <button (click)='art.numApprezzamenti = art.numApprezzamenti+1'>Mi piace no event</button>
 </p>
 
-<input type="number" ref-numero (keyup)="0" />  <!-- ref-numero oppure #numero -->
+<!-- ref-numero oppure #numero (keyup)="0"-->
+
 <div>
-  il doppio di {{numero.value}} sarebbe {{numero.value}}
+  <input type="number" [(ngModel)]="pippo" /> <!--forma compatta di-->
+  <p>Il doppio di {{pippo}} sarebbe {{pippo*2}}</p>
 </div>
 
-<input type="number" [(ngModel)]="pippo" /> <!--forma compatta di-->
-{{pippo}}
 <!-- <input type="number" (ngModel)="binding" (ngModelChange)="binding=$event" /> -->
 
 <p [ngClass]="{'font-size':'small'}">Questo è il mio paragrafo</p>

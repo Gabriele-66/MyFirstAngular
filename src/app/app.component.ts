@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
 import { Articolo } from './model/articolo';
+import { ArticoliService } from './ServiceArticoli/articoli.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ArticoliService]
 })
 
 export class AppComponent {
 
   title = 'GitPrAnguarMyFirst';
   rootArticolo;
-  elencoArticoli: any[] = [];
+  elencoArticoli: Articolo[] = [];
 
-  constructor() {
+  constructor(private articoliService: ArticoliService) {
+    this.elencoArticoli = articoliService.getArticoli();
+
     this.rootArticolo = {
       titolo: "Creare componenti Angular 2",
 			autore: "Mario Rossi",

@@ -1,5 +1,7 @@
 <router-outlet></router-outlet>
 
+<!-- <app-pipe></app-pipe> -->
+
 <articolo [art]="rootArticolo" (like)="grazie($event)"></articolo>
 
 <aForm (submit)="addArt($event)"></aForm>
@@ -7,7 +9,7 @@
 <div>
   <ul>
     <li *ngFor="let aa of elencoArticoli">
-      <b>{{aa.titolo}}</b>
+      <b>Titolo: {{aa.titolo}}</b>
     </li>
   </ul>
 </div>

@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { ArticoloComponent } from './articolo/articolo.component';
 import { ArticoloFormComponent } from './articolo-form/articolo-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { PipeComponent } from './pipe/pipe.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ArticoloComponent,
     ArticoloFormComponent,
     ReactiveFormComponent,
+    PipeComponent,
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,
