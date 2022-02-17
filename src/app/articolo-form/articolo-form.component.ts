@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Articolo } from '../model/articolo';
 
 @Component({
@@ -8,9 +8,17 @@ import { Articolo } from '../model/articolo';
 })
 export class ArticoloFormComponent implements OnInit {
 
-  model = new Articolo();
+  @Output() submit = new EventEmitter<Articolo>();
+  model: Articolo;
 
-  constructor() { }
+  constructor() {
+    this.model = new Articolo();
+  }
+
+  inviaArt(formValues: any) {
+    console.log(formValues)
+    this.submit.emit(formValues)
+  }
 
   ngOnInit(): void {
   }

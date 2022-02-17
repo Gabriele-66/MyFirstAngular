@@ -27,16 +27,16 @@
   </div>
 </template> -->
 
-<div [ngSwitch]="ruolo">
-	<div *ngSwitchCase="'admin'">
+<div [ngSwitch]="pippo">
+	<div *ngSwitchCase="1">
 		<button>Gestione utenti</button>
 		<button>Gestione documenti</button>
 	</div>
-	<div *ngSwitchCase="'managugugujger'">
+	<div *ngSwitchCase="2">
 		<button>Gestione documenti</button>
 		<button>Visualizza pratiche</button>
 	</div>
-	<div *ngSwitchCase="'utente'">
+	<div *ngSwitchCase="3">
 		<button>Visualizza pratiche</button>
 	</div>
 	<div *ngSwitchDefault>

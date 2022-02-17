@@ -2,4 +2,14 @@
 
 <articolo [art]="rootArticolo" (like)="grazie($event)"></articolo>
 
-<aForm></aForm>
+<aForm (submit)="addArt($event)"></aForm>
+
+<div>
+  <ul>
+    <li *ngFor="let aa of elencoArticoli">
+      <b>{{aa.titolo}}</b>
+    </li>
+  </ul>
+</div>
+
+<app-reactive-form></app-reactive-form>
