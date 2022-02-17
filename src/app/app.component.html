@@ -2,10 +2,13 @@
 
 <!-- <app-pipe></app-pipe> -->
 
-<articolo [art]="rootArticolo" (like)="grazie($event)"></articolo>
+<app-articolo [art]="rootArticolo" (like)="grazie($event)"></app-articolo>
 
-<aForm (submit)="addArt($event)"></aForm>
+<Form-Driven (submit)="addArt($event)"></Form-Driven>
 
+<Form-Reactive (submitReact)="addArt($event)"></Form-Reactive>
+
+<h2 style="text-align: center;">{{'lista di articoli aggiunti dai vari form' | uppercase}}</h2>
 <div>
   <ul>
     <li *ngFor="let aa of elencoArticoli">
@@ -13,5 +16,3 @@
     </li>
   </ul>
 </div>
-
-<app-reactive-form></app-reactive-form>

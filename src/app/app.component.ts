@@ -18,7 +18,7 @@ export class AppComponent {
   constructor(private articoliService: ArticoliService) {
     this.elencoArticoli = articoliService.getArticoli();
 
-    this.rootArticolo = {
+    this.rootArticolo = { //dati che passo ad articolo
       titolo: "Creare componenti Angular 2",
 			autore: "Mario Rossi",
       testo: "Creare componenti con Angular 2 è molto semplice.",
@@ -26,7 +26,7 @@ export class AppComponent {
     }
   }
 
-  grazie($event: { numApprezzamenti: string; }) {
+  grazie($event: { numApprezzamenti: string; }) { //evento ricevuto da articolo
     alert("grazie " + $event.numApprezzamenti);
   }
 

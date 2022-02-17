@@ -6,9 +6,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticoloComponent } from './articolo/articolo.component';
-import { ArticoloFormComponent } from './articolo-form/articolo-form.component';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { PipeComponent } from './pipe/pipe.component';
+import { ArticoloFormComponent } from './art-form-driven/articolo-form.component';
+import { ReactiveFormComponent } from './art-form-reactive/reactive-form.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     ArticoloComponent,
     ArticoloFormComponent,
     ReactiveFormComponent,
-    PipeComponent,
     TruncatePipe,
   ],
   imports: [

@@ -3,7 +3,7 @@ import { Articolo } from '../model/articolo';
 
 
 @Component({
-  selector: 'articolo',
+  selector: 'app-articolo',
   templateUrl: './articolo.component.html',
   styleUrls: ['./articolo.component.css']
 })
@@ -14,8 +14,8 @@ export class ArticoloComponent implements OnInit {
   @Output() like = new EventEmitter();
 
   pippo: any = 0;
-
-  listarticoli: any[] = [1,2,3,4,5,'pippo','pluto','a',["aa","bb"] ]
+  title = 'prove pipe';
+  oggi: number = Date.now();
 
   constructor() {}
 

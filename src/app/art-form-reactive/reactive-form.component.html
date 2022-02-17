@@ -1,0 +1,17 @@
+<h2 style="text-align: center;">{{'reactive form'|uppercase}}</h2>
+<form [formGroup]="myForm">
+  <div>
+    <label for="titolo">Titolo</label>
+    <input type="text" id="titolo" formControlName="titolo">
+    <span [hidden]="myForm.controls.titolo.valid || myForm.controls.titolo.pristine">Il titolo è obbligatorio e non può superare i 3 caratteri!</span>
+  </div>
+  <div>
+    <label for="autore">Autore</label>
+    <input type="text" id="autore" formControlName="autore">
+  </div>
+  <div>
+    <label for="testo">Testo</label>
+    <textarea id="testo" placeholder="testo articolo" formControlName="testo"></textarea>
+  </div>
+  <button type="button" [disabled]="myForm.invalid" (click)="reactForm()">Invia</button>
+</form>

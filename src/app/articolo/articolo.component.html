@@ -1,7 +1,14 @@
-<p>Voti:{{art.numApprezzamenti}}
+<h2 style="text-align: center;">{{'articolo' | uppercase}}</h2>
+
+<div>
+  <p>Voti:{{art.numApprezzamenti}}</p>
   <button (click)="inc1($event)">Mi piace</button>
   <button (click)='art.numApprezzamenti = art.numApprezzamenti+1'>Mi piace no event</button>
-</p>
+  <p>{{art.titolo}}</p>
+  <p>{{art.autore}}</p>
+  <p>{{art.testo}}</p>
+  <p>{{art.numApprezzamenti}}</p>
+</div>
 
 <!-- ref-numero oppure #numero (keyup)="0"-->
 
@@ -12,16 +19,13 @@
 
 <!-- <input type="number" (ngModel)="binding" (ngModelChange)="binding=$event" /> -->
 
-<p [ngClass]="{'font-size':'small'}">Questo è il mio paragrafo</p>
-<a class="button" ngClass="active">aaaaa</a> <!--<a class="button" [ngClass]="{ active: datiModificati && !solaLettura,disabled: !datiModificati || solaLettura }">Salva</a>-->
-
-<div *ngIf="pippo"><button>Save</button></div>
-
 <!-- <template [ngIf]="pippo">
   <div>
     <button>Save</button>
   </div>
 </template> -->
+
+<div *ngIf="pippo"><button>Save</button></div>
 
 <div [ngSwitch]="pippo">
 	<div *ngSwitchCase="1">
@@ -40,8 +44,14 @@
 	</div>
 </div>
 
-<ul>
-  <li *ngFor="let art of listarticoli">
-    <b>{{art}}</b>
-  </li>
-</ul>
+<div>
+  <h2 style="text-align: center;">{{'Le pipe di anguar' | uppercase}}</h2>
+  <p>{{"Le Pipe di Angular 2" | slice:3:3*2+1}}</p>
+  <p>{{title | slice:3:title.length - 2}}</p>
+  <p>{{"Le Pipe di Angular 2" | slice:3:7 | uppercase}}</p>
+  <p>{{oggi | date:"short" }}</p>
+  <p>{{ 123 | number:"1.2" }}</p>
+  <p>{{ 123.456789 | number:".3-5" }}</p>
+  <p>{{'gabrieleeeeeeeeeeeeeeeeeeeeeeeeeeeebbbbbbb'| truncate:20}}</p>
+</div>
+
