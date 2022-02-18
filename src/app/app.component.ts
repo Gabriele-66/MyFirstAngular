@@ -37,6 +37,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.articoliService.getArticoliJson().subscribe(data => this.elencoArticoli = data);
+    console.log(this.elencoArticoli)
     console.log('caricato file dal json')
   }
 }

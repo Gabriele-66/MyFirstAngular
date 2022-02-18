@@ -29,7 +29,7 @@ export class ArticoliService {
     */
   }
   getArticoliAll(): Articolo[] {
-    //console.log(this.elencoArticoli);
+    console.log('ALL');
     return this.elencoArticoli;
   }
 
@@ -53,6 +53,7 @@ getArticoli1(){
 */
 
   addArticolo(articolo: Articolo) {
-    this.elencoArticoli.push(articolo)
+    this.elencoArticoli.push(articolo);
+    console.log(this.elencoArticoli);
   }
 }
