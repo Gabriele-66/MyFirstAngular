@@ -26,6 +26,6 @@ export class ArticoloComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("Il componente è in fase di inizializzazione!");
+   // console.log("Il componente è in fase di inizializzazione!");
   }
 }

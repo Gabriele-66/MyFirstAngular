@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Articolo } from './model/articolo';
 import { ArticoliService } from './ServiceArticoli/articoli.service';
 
@@ -9,14 +9,15 @@ import { ArticoliService } from './ServiceArticoli/articoli.service';
   providers: [ArticoliService]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   title = 'GitPrAnguarMyFirst';
   rootArticolo;
   elencoArticoli: Articolo[] = [];
 
   constructor(private articoliService: ArticoliService) {
-    this.elencoArticoli = articoliService.getArticoli();
+
+    this.elencoArticoli = articoliService.getArticoliAll();
 
     this.rootArticolo = { //dati che passo ad articolo
       titolo: "Creare componenti Angular 2",
@@ -31,8 +32,11 @@ export class AppComponent {
   }
 
   addArt(articolo: any) {
-    this.elencoArticoli.push(articolo);
-    console.log(this.elencoArticoli);
+    this.articoliService.addArticolo(articolo);
   }
 
+  ngOnInit(): void {
+    this.articoliService.getArticoliJson().subscribe(data => this.elencoArticoli = data);
+    console.log('caricato file dal json')
+  }
 }

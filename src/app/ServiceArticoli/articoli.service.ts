@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Articolo } from '../model/articolo';
 
 @Injectable({
@@ -6,8 +8,12 @@ import { Articolo } from '../model/articolo';
 })
 
 export class ArticoliService {
-  private elencoArticoli: Articolo[];
-  constructor() {
+
+  private elencoArticoli: Articolo[] = [];
+  private APIURL = '/assets/articoli.json';
+
+  constructor(private http: HttpClient) {
+    /*
     this.elencoArticoli = [{
       titolo: "Creare componenti Angular 2",
       autore: "Mario Rossi",
@@ -20,10 +26,32 @@ export class ArticoliService {
       testo: "Anche creare servizi con Angular 2 è molto semplice.",
       numApprezzamenti: 0
     }];
+    */
   }
-  getArticoli(): Articolo[] {
+  getArticoliAll(): Articolo[] {
+    //console.log(this.elencoArticoli);
     return this.elencoArticoli;
   }
+
+  getArticoliJson(): Observable<Articolo[]> {
+    return this.http.get<Articolo[]>(this.APIURL);
+  }
+/*
+getArticoli1(){
+    return this.http.get(this.APIURL).subscribe(<Articolo[]>data => this.elencoArticoli= data);
+  }
+
+  getArticoli1(){
+    return this.http.get(this.APIURL)
+      .toPromise()
+      .then(Response)
+      .catch()
+    //  .subscribe(data => console.log(data));
+  }
+
+
+*/
+
   addArticolo(articolo: Articolo) {
     this.elencoArticoli.push(articolo)
   }

@@ -1,0 +1,13 @@
+[
+  { "autore": "Roberto Bianchi",
+    "numApprezzamenti": 0,
+    "testo": "Anche creare servizi con Angular 2 è molto semplice.",
+    "titolo": "Creare servizi Angular 2"
+  },
+  { "autore": "Mario Rossi",
+    "numApprezzamenti": 0,
+    "testo": "Creare componenti con Angular 2 è molto semplice.",
+    "titolo": "Creare componenti Angular 2"
+  }
+]
+

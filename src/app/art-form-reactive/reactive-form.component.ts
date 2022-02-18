@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Articolo } from '../model/articolo';
+import { ArticoliService } from '../ServiceArticoli/articoli.service';
 
 @Component({
   selector: 'Form-Reactive',
@@ -32,7 +33,7 @@ export class ReactiveFormComponent implements OnInit {
     })
   }
 */
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder,private articoliService: ArticoliService) {
     this.model = new Articolo();
     this.myForm = fb.group({
       titolo: ['titolo',[Validators.required, Validators.minLength(3)]],
@@ -52,7 +53,8 @@ export class ReactiveFormComponent implements OnInit {
 
   reactForm() {
     console.log(this.myForm.value);
-    this.submitReact.emit(this.myForm.value);
+   // this.submitReact.emit(this.myForm.value);
+    this.articoliService.addArticolo(this.myForm.value);
   //  console.log(this.myForm.controls["txtTitolo"].value);
   }
 
