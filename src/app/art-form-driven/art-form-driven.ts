@@ -3,8 +3,8 @@ import { Articolo } from '../model/articolo';
 
 @Component({
   selector: 'Form-Driven',
-  templateUrl: './articolo-form.component.html',
-  styleUrls: ['./articolo-form.component.css']
+  templateUrl: './art-form-driven.html',
+  styleUrls: ['./art-form-driven.css']
 })
 export class ArticoloFormComponent implements OnInit {
 
