@@ -9,7 +9,7 @@ import { Articolo } from '../model/articolo';
 
 export class ArticoliService {
 
-  private elencoArticoli: Articolo[] = [];
+  public elencoArticoli: Articolo[] = [];
   private APIURL = '/assets/articoli.json';
 
   constructor(private http: HttpClient) {

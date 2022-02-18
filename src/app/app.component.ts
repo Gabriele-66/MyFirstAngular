@@ -17,8 +17,6 @@ export class AppComponent implements OnInit{
 
   constructor(private articoliService: ArticoliService) {
 
-    this.elencoArticoli = articoliService.getArticoliAll();
-
     this.rootArticolo = { //dati che passo ad articolo
       titolo: "Creare componenti Angular 2",
 			autore: "Mario Rossi",
@@ -33,11 +31,12 @@ export class AppComponent implements OnInit{
 
   addArt(articolo: any) {
     this.articoliService.addArticolo(articolo);
+    this.elencoArticoli = this.articoliService.getArticoliAll();
   }
 
   ngOnInit(): void {
-    this.articoliService.getArticoliJson().subscribe(data => this.elencoArticoli = data);
-    console.log(this.elencoArticoli)
-    console.log('caricato file dal json')
+    this.articoliService.getArticoliJson().subscribe(data => this.articoliService.elencoArticoli = data);
+    console.log(this.elencoArticoli)//in questo punto array vuoto
+    console.log('caricato')
   }
 }

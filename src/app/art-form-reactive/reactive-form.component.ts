@@ -54,7 +54,7 @@ export class ReactiveFormComponent implements OnInit {
   reactForm() {
     console.log(this.myForm.value);
     this.submitReact.emit(this.myForm.value);
-    this.articoliService.addArticolo(this.myForm.value);
+    //this.articoliService.addArticolo(this.myForm.value);
   //  console.log(this.myForm.controls["txtTitolo"].value);
   }
 
