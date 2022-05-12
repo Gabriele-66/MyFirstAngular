@@ -1,32 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { Articolo } from './model/articolo';
 import { ArticoliService } from './ServiceArticoli/articoli.service';
+import { ArticoliStore } from './articoli.store'
+import { ComponentStore } from '@ngrx/component-store';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ArticoliService]
+  providers: [ArticoliService, ArticoliStore, ComponentStore]
 })
 
 export class AppComponent implements OnInit{
 
-  title = 'GitPrAnguarMyFirst';
+  title = 'AnguarMyFirst';
   rootArticolo;
   elencoArticoli: Articolo[] = [];
 
-  constructor(private articoliService: ArticoliService) {
+  articoli$ = this.articoliStore.articoli$;
+
+  constructor(private articoliService: ArticoliService, private readonly articoliStore: ArticoliStore) {
 
     this.rootArticolo = { //dati che passo ad articolo
       titolo: "Creare componenti Angular 2",
 			autore: "Mario Rossi",
-      testo: "Creare componenti con Angular 2 è molto semplice.",
-      numApprezzamenti: 0
+      testo: "Creare componenti con Angular 2 è molto semplice."
     }
   }
 
-  grazie($event: { numApprezzamenti: string; }) { //evento ricevuto da articolo
-    alert("grazie " + $event.numApprezzamenti);
+  addSt(articolo: Articolo) {
+    this.articoliStore.addArticolo(articolo)
   }
 
   addArt(articolo: any) {

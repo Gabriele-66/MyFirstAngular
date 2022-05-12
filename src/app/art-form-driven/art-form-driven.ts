@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Articolo } from '../model/articolo';
-import { ArticoliService } from '../ServiceArticoli/articoli.service';
 
 @Component({
   selector: 'Form-Driven',
@@ -12,7 +11,7 @@ export class ArticoloFormComponent implements OnInit {
   @Output() submit = new EventEmitter<Articolo>();
   model: Articolo;
 
-  constructor(private articoliService: ArticoliService) {
+  constructor() {
     this.model = new Articolo();
   }
 
