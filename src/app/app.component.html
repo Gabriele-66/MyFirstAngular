@@ -1,13 +1,3 @@
-<!-- <nav>
-  <ul>
-    <li><a routerLink="/Home" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/DrivenForm" routerLinkActive="active">DrivenForm</a></li>
-    <li><a routerLink="/ReactiveForm" routerLinkActive="active">ReactiveForm</a></li>
-  </ul>
-</nav> -->
-
-<router-outlet></router-outlet>
-
 <h2 style="text-align: center;">{{'lista di articoli aggiunti dai form' | uppercase}}</h2>
 <div>
   <ol>
@@ -22,9 +12,3 @@
 
 <Form-Driven (submit)="addArt($event)"></Form-Driven>
 <Form-Reactive (submitReact)="addArt($event)"></Form-Reactive>
-
-<!--<Form-Driven></Form-Driven>
-<Form-Reactive></Form-Reactive>-->
-
-
-<app-articolo [art]="rootArticolo" (like)="grazie($event)"></app-articolo>

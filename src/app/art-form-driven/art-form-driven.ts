@@ -17,9 +17,7 @@ export class ArticoloFormComponent implements OnInit {
   }
 
   inviaArt(formValues: any) {
-    console.log(formValues)
     this.submit.emit(formValues)
-    //this.articoliService.addArticolo(formValues);
   }
 
   ngOnInit(): void {
