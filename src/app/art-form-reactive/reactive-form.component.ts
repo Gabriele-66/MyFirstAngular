@@ -1,20 +1,20 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Articolo } from '../model/articolo';
+import { ArticoliStore } from '../articoli.store'
 
 @Component({
   selector: 'Form-Reactive',
   templateUrl: './reactive-form.component.html',
   styleUrls: ['./reactive-form.component.css']
 })
-export class ReactiveFormComponent implements OnInit {
+export class ReactiveFormComponent {
 
   myForm: any;
   FormGroup: any;
-  @Input() model: Articolo;
-  @Output() submitReact = new EventEmitter<Articolo>();
+  model: Articolo;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private readonly articoliStore: ArticoliStore) {
     this.model = new Articolo();
     this.myForm = fb.group({
       titolo: ['titolo',[Validators.required, Validators.minLength(3)]],
@@ -23,11 +23,7 @@ export class ReactiveFormComponent implements OnInit {
     })
   }
 
-  reactForm() {
-    this.submitReact.emit(this.myForm.value);
+  add() {
+    this.articoliStore.addArticolo(this.myForm.value);
   }
-
-  ngOnInit(): void {
-  }
-
 }

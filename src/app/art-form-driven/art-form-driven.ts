@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Articolo } from '../model/articolo';
+import { ArticoliStore } from '../articoli.store'
 
 @Component({
   selector: 'Form-Driven',
@@ -8,15 +9,14 @@ import { Articolo } from '../model/articolo';
 })
 export class ArticoloFormComponent implements OnInit {
 
-  @Output() submit = new EventEmitter<Articolo>();
   model: Articolo;
 
-  constructor() {
+  constructor(private readonly articoliStore: ArticoliStore) {
     this.model = new Articolo();
   }
 
-  inviaArt(formValues: any) {
-    this.submit.emit(formValues)
+  add(art: Articolo) {
+    this.articoliStore.addArticolo(art);
   }
 
   ngOnInit(): void {
