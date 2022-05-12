@@ -7,8 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ArticoloFormComponent } from './art-form-driven/art-form-driven';
 import { ReactiveFormComponent } from './art-form-reactive/reactive-form.component';
-import { ArticoliService } from './ServiceArticoli/articoli.service';
-import { ArticoliStore } from './articoli.store'
 
 @NgModule({
   declarations: [
@@ -22,7 +20,7 @@ import { ArticoliStore } from './articoli.store'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ArticoliService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
