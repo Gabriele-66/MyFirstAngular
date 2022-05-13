@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Articolo } from './model/articolo';
 import { ArticoliStore } from './articoli.store'
 import { ComponentStore } from '@ngrx/component-store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,19 +11,21 @@ import { ComponentStore } from '@ngrx/component-store';
   providers: [ ArticoliStore, ComponentStore]
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   elencoArticoli: Articolo[] = [];
 
   articoli$ = this.articoliStore.articoli$;
 
-  constructor(private readonly articoliStore: ArticoliStore) {}
+  obs = this.articoliStore.articoli$.subscribe(arg => console.log(arg));
+
+
+  constructor(private readonly articoliStore: ArticoliStore) { }
 
   ngOnInit(): void {
 
   }
-  
-  addSt(articolo: Articolo) {
-    this.articoliStore.addArticolo(articolo)
-  }
+
+
+
 }

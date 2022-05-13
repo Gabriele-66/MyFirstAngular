@@ -11,7 +11,7 @@ export interface Articoli {
 export class ArticoliStore extends ComponentStore<Articoli> {
 
   constructor() {
-    super({articoli: []});
+    super({ articoli: [] });
   }
 
   readonly addArticolo = this.updater((state, articolo: Articolo) => ({
@@ -19,4 +19,5 @@ export class ArticoliStore extends ComponentStore<Articoli> {
   }))
 
   readonly articoli$: Observable<Articolo[]> = this.select(state => state.articoli)
+
 }
